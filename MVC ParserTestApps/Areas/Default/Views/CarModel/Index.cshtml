@@ -1,0 +1,50 @@
+﻿@model MVC_ParserTestApps.Models.PageableData<MVC_ParserTestApps.CarModels>
+@using MVC_ParserTestApps.Helper;
+@h MVC_parser
+@{
+    ViewBag.Title = "CarsModels";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>CarsModel</h2>
+<div class="select brand">
+</div>
+<div class="CarsList">
+    @foreach (var role in Model.List)
+    {
+        <div class="item">
+                
+            <div class="BrandName">
+                @role.BrandName
+            </div>
+            <div class="ModelName">
+                @role.ModelName
+            </div>
+            <div class="CarId">
+                @role.CarId
+            </div>
+        </div>
+    }
+    <div class="pagination">
+        @Html.PageLinks(Model.PageNo, Model.CountPage, x => Url.Action("Index", new { page = x }))
+    </div>
+</div>
+
+
+
+@*<div id="InsertData">
+    </div>
+    <div id="Data">
+        @{
+            var parsedtext = new ParserHTML();
+            var text = parsedtext.dbSelect("Golf");
+            int i = 0;
+            foreach (string user in text)
+            {
+                i++;
+                <div id="@i"><input>@Html.Raw(user)</div>
+            }
+        }
+
+    </div>*@

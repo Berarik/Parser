@@ -1,0 +1,31 @@
+﻿@model IList<MVC_ParserTestApps.Cars>
+
+@{
+    ViewBag.Title = "Car";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles</h2>
+
+<p>
+    @foreach (var role in Model)
+    {
+        <div class="item">
+            <span class="id">
+                @role.Id
+            </span>
+            <span class="Description">
+                @role.Description
+            </span>
+            <span class="ModelId">
+                @role.ModelId
+            </span>
+            <span class="Price">
+                @role.Price
+            </span>
+            <span class="Year">
+                @role.Year.ToShortDateString()
+            </span>
+        </div>
+    }
+</p>

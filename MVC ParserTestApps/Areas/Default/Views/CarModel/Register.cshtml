@@ -1,0 +1,37 @@
+﻿@model MVC_ParserTestApps.CarModels
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+<div
+@using (Html.BeginForm("Register", "CarModel", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="BrandName">
+                Бренд автомобиля
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("BrandName")
+                @Html.TextBox("BrandName", Model.BrandName)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="ModelName">
+                 Модель автомобиля
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("ModelName")
+                @Html.TextBox("ModelName", Model.ModelName)
+            </div>
+        </div>      
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}

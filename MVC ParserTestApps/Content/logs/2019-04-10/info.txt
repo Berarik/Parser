@@ -1,0 +1,6 @@
+2019-04-10 20:44:06.9390|INFO|MVC_ParserTestApps.MvcApplication|Application Start
+2019-04-10 20:44:08.9584|INFO|MVC_ParserTestApps.MvcApplication|Application Error
+2019-04-10 20:44:12.0522|INFO|MVC_ParserTestApps.MvcApplication|Application Error
+2019-04-10 20:44:12.4533|INFO|MVC_ParserTestApps.MvcApplication|Application Error
+2019-04-10 20:44:12.9702|INFO|MVC_ParserTestApps.MvcApplication|Application Error
+2019-04-10 20:44:44.6765|INFO|MVC_ParserTestApps.MvcApplication|Application Error

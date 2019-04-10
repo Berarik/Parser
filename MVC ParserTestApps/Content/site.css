@@ -1,0 +1,119 @@
+﻿body {
+    /* padding-top: 60px !important; */
+}
+
+.navbar {
+    background-color: #fee;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border: 0.5px solid black;
+    display: flex;
+}
+
+.body-content {
+    position: relative;
+}
+
+.b-right-side {
+    float: left;
+    width: 240px;
+    margin-left: -240px;
+}
+
+    .b-right-side a:first-child {
+        border-top: 1px solid #c1c1c1;
+    }
+
+    .b-right-side a {
+        border-bottom: 1px solid #c1c1c1;
+        padding: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: block;
+        width: 100%;
+    }
+
+.b-left-side {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    min-width: 690px;
+    padding-right: 260px;
+}
+
+
+.pagination {
+    /* padding-bottom: 20px; */
+    /* margin-bottom: 20px; */
+    display: flex;
+}
+
+footer {
+    display: flex;
+    bottom: 0px;
+    background-color: #fee;
+    padding: 5px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.item {
+    display: flex;
+    border-bottom: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+    border-left: 1px solid #c1c1c1;
+    padding: 5px;
+}
+
+.BrandName {
+    flex: 1 1 auto;
+}
+
+.ModelName {
+    flex: 0 0 53.5%;
+    border-left: 1px solid #c1c1c1;
+    padding-left: 10px;
+}
+
+.CarId {
+    padding-left: 10px;
+    border-left: 1px solid #c1c1c1;
+    flex: 0 0 23.5%;
+}
+
+.CarsList {
+    padding: 2px;
+    border: 2px;
+}
+
+.item:first-child {
+    border-top: 1px solid #c1c1c1;
+}

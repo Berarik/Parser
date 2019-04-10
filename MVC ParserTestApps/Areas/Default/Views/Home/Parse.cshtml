@@ -1,0 +1,73 @@
+﻿@model List<MVC_ParserTestApps.CarModels>
+@{
+    ViewBag.Title = "Parse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Parse</h2>
+<p>
+   
+   @using (Html.BeginForm("Parse", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+   {
+    <fieldset>     
+       @Html.TextBox("brand")
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>          
+        </div>
+    </fieldset>
+   }
+    @foreach (var role in Model)
+    {
+        <div class="item">
+            <span class="id">
+                @role.ModelId
+            </span>
+            <span class="BrandName">
+                @role.BrandName
+            </span>
+            <span class="ModelName">
+                @role.ModelName
+            </span>
+        </div>
+    }
+
+@*@using (Html.BeginForm("Parse", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="URIadress">
+                    URI
+                </label>
+                <div class="controls" style="width:100%">
+                    @Html.ValidationMessage("CurBrand")
+                    @Html.TextBox("CurBrand", Model.CurBrand)
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    Register
+                </button>
+                @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+            </div>
+        </fieldset>
+    }*@
+    @*@foreach (var role in Model.ParsePage())
+        {
+            <div class="item" style="flex:1 1 auto; display:inline-flex; width:100% ">
+                <div class="BrandName" style="flex:0 0 24%; margin-right: 10px; align-self:flex-start">
+                    @role.BrandName
+                </div>
+                <div class="ModelName" style="display:inline-flex; flex:0 0 24%; margin-right: 10px;align-self:auto">
+                    @role.ModelName
+                </div>
+                <div class="YearStart" style="align-self:flex-end; display:inline-flex; margin-right: 10px;align-self:auto" >
+                    @role.YearStart
+                </div>
+                <div class="CarId" style="align-self:flex-end; display:inline-flex">
+                    @role.CarId
+                </div>
+            </div>
+            <br />
+        }*@
+</p>

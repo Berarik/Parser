@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CDB" Class="CarsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cars" Member="Cars">
+    <Type Name="Cars">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ModelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="CarModels_Cars" Member="CarModels" ThisKey="ModelId" OtherKey="ModelId" Type="CarModels" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarModels" Member="CarModels">
+    <Type Name="CarModels">
+      <Column Name="ModelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YearStart" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CarId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YearEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CarType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CarModels_Cars" Member="Cars" ThisKey="ModelId" OtherKey="ModelId" Type="Cars" />
+    </Type>
+  </Table>
+</Database>

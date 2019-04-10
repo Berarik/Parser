@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css/jqueryui")
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Cars Парсер", "Index", "Home")@*, new { area = "" }, new { @class = "navbar-brand" })*@
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Ссылка 1</a></li>
+                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
+                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
+                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="b-left-side">
+            @RenderBody()
+            @*@Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/jqueryui")*@
+            @Scripts.Render("~/bundles/bootstrap")
+            @Scripts.Render("~/bundles/common")
+            @RenderSection("scripts", required: false)
+        </div>
+        <div class="b-right-side">
+            <a href="@Url.Action("Index", "Car", new { id = 1})">Роли</a>
+            @Html.ActionLink("Модели Машин", "Index", "CarModel")
+            @Html.ActionLink("Регистер Машин", "Register", "CarModel")
+            @Html.ActionLink("ПАРСИНГ", "Parse", "Home")
+
+        </div><hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
